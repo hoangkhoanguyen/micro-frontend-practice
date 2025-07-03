@@ -15,6 +15,14 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Extract App Name from Branch
+      id: extract
+      run: |
+          BRANCH_NAME=${GITHUB_REF##*/}
+          echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          APP_NAME=${BRANCH_NAME##*/}
+          echo "app_name=$APP_NAME" >> $GITHUB_OUTPUT
+
     - name: set up docker buildx
       uses: docker/setup-buildx-action@v3
 
@@ -29,6 +37,6 @@ jobs:
       with:
           context: ./apps/micro-app
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/${GITHUB_REF##*/}
+          tags: ${{ secrets.DOCKER_USERNAME }}/${{ steps.extract.outputs.app_name }}
           file: ./apps/micro-app/Dockerfile
 
