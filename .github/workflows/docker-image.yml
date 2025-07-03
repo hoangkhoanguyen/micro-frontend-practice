@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "dev/*" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "dev/*" ]
 
 jobs:
 
@@ -29,6 +29,6 @@ jobs:
       with:
           context: ./apps/micro-app
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/micro-app
+          tags: ${{ secrets.DOCKER_USERNAME }}/${GITHUB_REF##*/}
           file: ./apps/micro-app/Dockerfile
 
