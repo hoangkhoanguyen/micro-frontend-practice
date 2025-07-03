@@ -1,0 +1,41 @@
+# Node modules & lock files
+
+node_modules
+pnpm-lock.yaml
+
+# Build output
+
+dist
+.vite
+
+# Logs & temp files
+
+_.log
+temp
+_.tmp
+\*.cache
+.cache/
+
+# Env files
+
+.env
+.env.\*
+
+# VSC & editor config
+
+.vscode
+.idea
+
+# Git & Docker metadata
+
+.git
+.gitignore
+Dockerfile*
+docker-compose*
+README.md
+
+# TypeScript build artifacts
+
+\*.tsbuildinfo
+
+**/._*

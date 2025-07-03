@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+    micro-app:
+        container_name: micro_app
+        image: micro_app
+        build:
+            context: .
+        ports:
+            - "4173:4173"
+        network_mode: bridge

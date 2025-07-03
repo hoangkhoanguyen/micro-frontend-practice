@@ -1,0 +1,14 @@
+// tsconfig.json
+{
+    "compilerOptions": {
+      "target": "ESNext",
+      "module": "ESNext",
+      "moduleResolution": "Node",
+      "jsx": "react-jsx",
+      "strict": true,
+      // "baseUrl": ".",
+      // "paths": {"micro_app/*": ["types/micro_app/*"]}
+    },
+    "include": ["node"],
+    "exclude": ["node_modules", "dist"]
+  }

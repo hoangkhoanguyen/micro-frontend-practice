@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+    shell-app:
+        container_name: shell_app
+        image: shell_app
+        build:
+            context: .
+        ports:
+            - "4175:80"
+        network_mode: bridge
